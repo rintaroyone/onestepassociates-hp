@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Eyebrow, ButtonLink, SectionHeading, ArrowRight } from "@/components/ui";
 import { Reveal } from "@/components/reveal";
-import { StepGraphic, NetworkGraphic, Blob } from "@/components/visuals";
+import { NetworkGraphic, Blob } from "@/components/visuals";
 import { services, reasons, company } from "@/lib/content";
 
 export default function HomePage() {
@@ -42,10 +43,19 @@ export default function HomePage() {
               </Reveal>
             </div>
 
-            <div className="lg:col-span-5">
+            <div className="pointer-events-none lg:col-span-5">
               <Reveal delay={200}>
-                <div className="relative mx-auto max-w-md">
-                  <StepGraphic className="w-full drop-shadow-xl" />
+                <div className="relative mx-auto -my-4 max-w-md sm:max-w-lg lg:my-0 lg:max-w-none">
+                  <Image
+                    src="/images/generated/hero-transformation.png"
+                    alt="ネットワークから段階的なステップへと立ち上がる、業務変革と実行を象徴する抽象ビジュアル"
+                    width={2048}
+                    height={1152}
+                    sizes="(max-width: 1024px) 90vw, 42vw"
+                    loading="eager"
+                    fetchPriority="high"
+                    className="h-auto w-full select-none [-webkit-mask-composite:source-in] [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,transparent,#000_15%,#000_85%,transparent),linear-gradient(to_right,transparent,#000_26%,#000_100%)]"
+                  />
                 </div>
               </Reveal>
             </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container, Eyebrow, SectionHeading, ButtonLink } from "@/components/ui";
 import { Reveal } from "@/components/reveal";
 import { Blob } from "@/components/visuals";
@@ -17,6 +18,18 @@ export default function ServicesPage() {
       <section className="relative overflow-hidden bg-cream pt-20 pb-16 sm:pt-24">
         <div className="absolute inset-0 bg-dotgrid opacity-40" aria-hidden />
         <Blob className="-left-28 -top-20 h-[380px] w-[380px] bg-brand-light/15" />
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[56%] select-none lg:block"
+          aria-hidden
+        >
+          <Image
+            src="/images/generated/services-process.png"
+            alt=""
+            fill
+            sizes="56vw"
+            className="object-cover object-left opacity-50 [mask-image:linear-gradient(to_right,transparent,#000_48%,#000_92%,transparent)]"
+          />
+        </div>
         <Container className="relative">
           <Reveal>
             <Eyebrow>サービス</Eyebrow>
